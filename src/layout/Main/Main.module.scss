@@ -1,0 +1,149 @@
+@use "@/styles/variables.scss" as *;
+@use "@/styles/mixins.scss" as *;
+
+
+.article {
+    @include flex-center;   
+    margin-top: 150px;
+    margin-bottom: 150px;
+    background-color: $background-card;
+    border-radius: 10px;
+    gap:30px;
+}
+
+.content {
+    color:white;
+    display: grid;
+    gap: 80px;
+    padding: 60px;
+}
+
+.contentTop {
+    display: grid;
+    gap:30px
+}
+
+.title {
+    color:$stats-color;
+    font-family: $font-primary;
+    font-size:clamp(2rem,2.5vw,10rem);
+    font-weight: 700;
+}
+
+.titlePurple {
+    color: $accent-color;
+}
+
+.text {
+    color: $main-paragraph;
+    font-family: $font-primary;
+    font-size:clamp(1rem,0.9vw,10rem);
+    letter-spacing: 0.5px;
+    line-height: 27px;
+}
+
+.contentBottom {
+    color:white;
+    @include flex-between;
+}
+
+.title2 {
+    color:white;
+    font-family: $font-primary;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size:clamp(1.3rem,1.5vw,10rem);
+}
+
+.text2 {
+    color: $stats-color;
+    font-family: $font-secondary;
+    font-size:clamp(0.9rem,0.8vw,10rem);
+    color: $stat-heading;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+.contentBottomDiv {
+    display: grid;
+    gap: 8px
+}
+
+.imageDesktop {
+    border-radius: 0px 10px 10px 0px;
+    width: 33vw;         
+    height: auto;       
+    min-width: 573px;    
+    max-width: 100%;     
+    object-fit: contain;
+    filter: grayscale(100%) brightness(55%) sepia(85%) hue-rotate(227deg) saturate(300%);
+}
+
+.imageMobile {
+    display: none;
+}
+
+.brDesktop {
+    display: block;
+}
+
+.brMobile {
+    display: none;
+}
+
+@media (max-width: 1230px) {
+    .article {
+        display: grid;
+        gap:0px;
+    }
+
+    .imageDesktop {
+        display: none;
+    }
+
+    .imageMobile {
+        display: block;
+        border-radius: 10px 10px 0px 0px;
+        width: 40vw;         
+        height: auto;       
+        min-width: 355px;    
+        max-width: 100%;     
+        object-fit: contain;
+        filter: grayscale(100%) brightness(55%) sepia(85%) hue-rotate(227deg) saturate(300%);
+    }
+
+    .brDesktop {
+        display: none;
+    }
+
+    .brMobile {
+        display: block;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+
+    .contentBottom {
+        display: grid;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .title2 {
+        text-align: center;
+    }
+
+    .text2 {
+        text-align: center;
+    }
+
+    .content {
+        padding: 35px;
+    }
+}
+
